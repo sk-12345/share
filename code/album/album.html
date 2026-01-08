@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <title>写真共有（アルバム）</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="album.css" />
+</head>
+<body>
+    <div class="wrap">
+        <h2 class="page-title">写真共有（ログイン必須）</h2>
+        <div class="back-links">
+            <a href="../home/home.html">ホームに戻る</a>
+        </div>
+
+        <!-- 作成（権限ある人だけ表示） -->
+        <div id="createArea" class="box" style="display:none;">
+            <h3>アルバム作成</h3>
+            <form id="createForm">
+                <label>題名（フォルダ名）</label>
+                <input type="text" name="title" required />
+
+                <label>説明（何をしたか）</label>
+                <textarea name="description" rows="4" required></textarea>
+
+                <label>写真（複数選択OK）</label>
+                <input type="file" name="images[]" accept="image/*" multiple required />
+
+                <button type="submit">作成してアップロード</button>
+                <p id="createMsg"></p>
+            </form>
+        </div>
+
+        <h2 class="page-title">アルバム一覧</h2>
+        <div id="albumList" class="grid"><p>読み込み中...</p></div>
+    </div>
+
+    <script src="album.js"></script>
+</body>
+</html>

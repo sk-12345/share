@@ -1,0 +1,13 @@
+USE share;
+
+-- 既にあれば削除
+DROP TABLE IF EXISTS roles;
+
+-- roles テーブル作成
+CREATE TABLE roles (
+  id INT PRIMARY KEY,
+  role_name VARCHAR(20) NOT NULL,
+  description VARCHAR(50)
+) ENGINE=InnoDB
+  DEFAULT CHARSET=utf8mb4
+  COLLATE=utf8mb4_general_ci;

@@ -1,0 +1,6 @@
+-- share 初期化
+DROP DATABASE IF EXISTS share;
+
+CREATE DATABASE share
+  DEFAULT CHARACTER SET utf8mb4
+  COLLATE utf8mb4_general_ci;

@@ -1,7 +1,0 @@
--- 共有DB 初期化
-DROP DATABASE IF EXISTS photo_share;
-
-CREATE DATABASE IF NOT EXISTS photo_share
-  DEFAULT CHARACTER SET utf8mb4
-  COLLATE utf8mb4_unicode_ci;
-USE photo_share;

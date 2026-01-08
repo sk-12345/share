@@ -3,7 +3,7 @@ chcp 932 >nul
 setlocal enabledelayedexpansion
 
 REM ==========================================================
-REM  Nishijuku SQL Runner（今のフォルダ構成専用）
+REM  share SQL Runner（今のフォルダ構成専用）
 REM
 REM  ▼フォルダ構成はこのまま
 REM   DB\    ← DB作成系SQLを置く
@@ -20,12 +20,12 @@ set "MYSQL_EXE=C:\xampp\mysql\bin\mysql.exe"
 REM DB接続情報
 set "DB_HOST=localhost"
 set "DB_USER=root"
-set "DB_PASS="
+set "DB_PASS=kmkr3110"
 
-REM "C:\xampp\htdocs\nishijuku\DB\all.bat"
+REM "C:\xampp\htdocs\share\DB\all.bat"
 set "ROOT=%~dp0"
 
-REM "C:\xampp\htdocs\nishijuku\DB\all.bat"
+REM "C:\xampp\htdocs\share\DB\all.bat"
 set "MEMO_FILE=%ROOT%run_memo.txt"
 REM =================================================================
 

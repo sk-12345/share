@@ -21,8 +21,7 @@ function buildMenu(isAdminOrSystem) {
         items.push({ href: "../account/account.html", text: "アカウント管理" });
     }
 
-    items.push({ href: "../practice_post/practice_post.html", text: "練習風景・投稿", extraClass: "main-card" });
-    items.push({ href: "../event_post/event_post.html", text: "イベント一覧・投稿", extraClass: "main-card" });
+    items.push({ href: "../album/albumt.html", text: "共有", extraClass: "main-card" });
     items.push({ href: "../password/password.html", text: "パスワード変更" });
     items.push({ href: "../logout.php", text: "ログアウト", extraClass: "logout-card" });
 
