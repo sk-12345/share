@@ -8,7 +8,7 @@ $role_id = (int)($_SESSION['user']['role_id'] ?? 0);
 $user_id = (int)($_SESSION['user']['id'] ?? 0);
 
 // 権限（あなたの基準に合わせて）
-$is_admin   = in_array($role_id, [1,2,3], true);
+$is_admin   = in_array($role_id, [1,2,3,4], true);
 $is_general = ($role_id === 4);
 
 // 保存場所（album_api.php と同じにする）
