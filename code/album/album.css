@@ -150,6 +150,49 @@ body {
     color: #666;
 }
 
+.actions, .select-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 8px 0;
+}
+
+.btn, .mini {
+    display: inline-block;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.danger {
+    border-color: #ff6b6b;
+}
+
+.thumb {
+    position: relative;
+}
+
+.thumb-actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.pick {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background: rgba(255,255,255,0.9);
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+
 @media (min-width: 700px) {
     .grid {
         grid-template-columns: 1fr 1fr;
