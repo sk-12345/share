@@ -3,7 +3,7 @@
 $db_host = '127.0.0.1';          // そのままでOK
 $db_name = 'share';          // つくったデータベース名
 $db_user = 'root';               // ユーザー名
-$db_pass = 'kmkr3110';  // ←インストール時に決めたパスワード
+$db_pass = '';  // ←インストール時に決めたパスワード
 
 $dsn = "mysql:host={$db_host};dbname={$db_name};charset=utf8mb4";
 

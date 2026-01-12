@@ -20,7 +20,7 @@ set "MYSQL_EXE=C:\xampp\mysql\bin\mysql.exe"
 REM DBê⁄ë±èÓïÒ
 set "DB_HOST=localhost"
 set "DB_USER=root"
-set "DB_PASS=kmkr3110"
+set "DB_PASS="
 
 REM "C:\xampp\htdocs\share\DB\all.bat"
 set "ROOT=%~dp0"

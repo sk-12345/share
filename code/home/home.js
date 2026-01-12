@@ -21,7 +21,7 @@ function buildMenu(isAdminOrSystem) {
         items.push({ href: "../account/account.html", text: "アカウント管理" });
     }
 
-    items.push({ href: "../album/albumt.html", text: "共有", extraClass: "main-card" });
+    items.push({ href: "../album/album.html", text: "共有", extraClass: "main-card" });
     items.push({ href: "../password/password.html", text: "パスワード変更" });
     items.push({ href: "../logout.php", text: "ログアウト", extraClass: "logout-card" });
 
