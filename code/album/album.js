@@ -37,6 +37,7 @@ function albumCard(a) {
 
       <div class="thumb-actions">
         <a class="mini" href="${esc(p.download_url)}">1件DL</a>
+        <a class="mini" href="${esc(p.media_url)}" target="_blank" rel="noopener">DL</a>
 
         ${a.can_delete_photo ? `
           <button class="mini danger" data-action="delete_photo" data-photo-id="${esc(p.id)}">削除</button>

@@ -7,7 +7,7 @@ if (!isset($_SESSION['user'])) { http_response_code(401); exit; }
 $role_id = (int)($_SESSION['user']['role_id'] ?? 0);
 $user_id = (int)($_SESSION['user']['id'] ?? 0);
 
-$is_admin = in_array($role_id, [1,2,3], true);
+$is_admin = in_array($role_id, [1,2,3,4], true);
 
 $album_id = (int)($_GET['album_id'] ?? 0);
 if ($album_id <= 0) { http_response_code(400); exit; }
