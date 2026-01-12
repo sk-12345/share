@@ -9,22 +9,21 @@ body {
 }
 
 .wrap {
-    width: 92vw;
-    max-width: 1100px;
+    width: min(1100px, 92vw);
     margin: 0 auto;
-    padding: 5vw 0;
+    padding: 20px 0 50px;
 }
 
 .page-title {
     color: #fff;
     text-align: center;
-    margin: 10px 0 20px;
-    font-size: clamp(18px,4vw,26px);
+    margin: 12px 0 18px;
+    font-size: clamp(18px, 4.5vw, 26px);
 }
 
 .back-links {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
     .back-links a {
@@ -41,157 +40,132 @@ body {
     background: #fff;
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0,0,0,.25);
-    padding: 16px;
-    margin-bottom: 18px;
+    padding: 14px;
+    margin-bottom: 16px;
 }
+
+    .box label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+    }
 
     .box input, .box textarea {
         width: 100%;
         padding: 12px;
-        border-radius: 8px;
+        border-radius: 10px;
         border: 1px solid #ccc;
         margin-top: 6px;
-    }
-
-    .box label {
-        display: block;
-        margin-top: 12px;
-        font-weight: bold;
+        font-size: 16px; /* スマホの勝手ズーム防止 */
     }
 
     .box button {
         width: 100%;
-        margin-top: 14px;
+        margin-top: 12px;
         padding: 12px;
         border: 0;
-        border-radius: 10px;
+        border-radius: 12px;
         background: #0a3d62;
         color: #fff;
         cursor: pointer;
+        font-size: 16px;
     }
 
         .box button:hover {
-            opacity: .9;
+            opacity: .92;
         }
 
 .grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 16px;
 }
 
 .card-head {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
     gap: 10px;
 }
 
-.actions {
-    display: flex;
-    gap: 8px;
-}
-
-    .actions button {
-        padding: 8px 10px;
-        border: 0;
-        border-radius: 10px;
-        cursor: pointer;
+    .card-head h3 {
+        margin: 0;
+        font-size: 18px;
     }
-
-    .actions .danger {
-        background: #c0392b;
-        color: #fff;
-    }
-
-.desc {
-    white-space: normal;
-    line-height: 1.6;
-}
-
-.thumbs {
-    margin-top: 12px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-}
-
-.thumb {
-    position: relative;
-}
-
-    .thumb img {
-        width: 100%;
-        height: 110px;
-        object-fit: cover;
-        border-radius: 12px;
-        display: block;
-    }
-
-.mini-del {
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    width: 28px;
-    height: 28px;
-    border-radius: 999px;
-    border: 0;
-    background: rgba(192,57,43,.9);
-    color: #fff;
-    cursor: pointer;
-}
-
-.muted {
-    color: #eee;
-    text-align: center;
-}
-
-.card .muted {
-    color: #666;
-}
 
 .actions, .select-actions {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-    margin: 8px 0;
 }
 
-.btn, .mini {
-    display: inline-block;
-    padding: 6px 10px;
-    border: 1px solid #ccc;
-    background: #fff;
-    border-radius: 6px;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 12px;
+    .actions button, .select-actions button,
+    .btn, .mini {
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid #d0d0d0;
+        background: #fff;
+        cursor: pointer;
+        font-size: 14px;
+        text-decoration: none;
+        color: #111;
+        min-height: 40px; /* タップしやすい */
+    }
+
+        .actions .danger, .mini.danger, button.danger {
+            background: #c0392b;
+            border-color: #c0392b;
+            color: #fff;
+        }
+
+.desc {
+    white-space: normal;
+    line-height: 1.6;
+    margin: 10px 0;
 }
 
-.danger {
-    border-color: #ff6b6b;
+.thumbs {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 }
 
 .thumb {
     position: relative;
 }
 
+.media {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 14px;
+    display: block;
+    background: #000;
+}
+
 .thumb-actions {
     display: flex;
-    gap: 6px;
-    margin-top: 4px;
+    gap: 8px;
+    margin-top: 6px;
 }
 
 .pick {
     position: absolute;
-    top: 6px;
-    left: 6px;
-    background: rgba(255,255,255,0.9);
-    padding: 2px 6px;
-    border-radius: 6px;
+    top: 8px;
+    left: 8px;
+    background: rgba(255,255,255,0.92);
+    padding: 4px 8px;
+    border-radius: 10px;
     font-size: 12px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
 }
 
+.muted {
+    color: #666;
+    text-align: center;
+}
 
 @media (min-width: 700px) {
     .grid {
@@ -199,12 +173,30 @@ body {
     }
 
     .thumbs {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .media {
+        height: 150px;
+    }
+
+    .card-head {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
     }
 }
 
 @media (min-width: 1000px) {
     .grid {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .thumbs {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .media {
+        height: 160px;
     }
 }
