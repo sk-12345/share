@@ -1,6 +1,8 @@
 ﻿<?php
 session_start();
 
+require_once '../db.php';
+
 header('Content-Type: application/json; charset=UTF-8');
 
 if (!isset($_SESSION['user'])) {
@@ -13,14 +15,21 @@ $user = $_SESSION['user'];
 
 $roleId = isset($user['role_id']) ? (int)$user['role_id'] : 0;
 
-$roleNameMap = [
-    1 => 'SYSTEM',
-    2 => 'ADMIN',
-    3 => 'PHOTO',
-    4 => 'GENERAL',
-];
+/**
+ * ✅ rolesテーブルから「id => role_name」の配列を作る
+ */
+function getRoleMap(PDO $pdo): array {
+    $stmt = $pdo->query("SELECT id, role_name FROM roles");
+    $map = [];
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $map[(int)$row['id']] = (string)$row['role_name'];
+    }
+    return $map;
+}
 
-$roleName = $roleNameMap[$roleId] ?? ('UNKNOWN(' . $roleId . ')');
+$roleMap  = getRoleMap($pdo);              // ★先に作る
+
+$roleName = $roleMap[$roleId] ?? '不明';
 $isAdminOrSystem = in_array($roleId, [1, 2], true);
 
 echo json_encode([
