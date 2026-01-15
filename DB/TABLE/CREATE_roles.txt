@@ -4,10 +4,13 @@ USE share;
 DROP TABLE IF EXISTS roles;
 
 -- roles テーブル作成
-CREATE TABLE roles (
-  id INT PRIMARY KEY,
-  role_name VARCHAR(20) NOT NULL,
-  description VARCHAR(50)
-) ENGINE=InnoDB
-  DEFAULT CHARSET=utf8mb4
-  COLLATE=utf8mb4_general_ci;
+create table share.`roles` (
+  id int(11) not null comment '権限ID'
+  , role_name varchar(20) not null comment '権限名'
+  , description varchar(50) comment '権限説明'
+  , primary key (id)
+)
+  comment='権限'
+  engine InnoDB
+  row_format DYNAMIC
+  collate utf8mb4_general_ci
