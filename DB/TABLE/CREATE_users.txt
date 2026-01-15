@@ -3,12 +3,18 @@ USE share;
 -- 既にあれば削除
 DROP TABLE IF EXISTS users;
 
-CREATE TABLE users (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  login_id VARCHAR(50),
-  password_hash VARCHAR(255),
-  name VARCHAR(50),
-  role_id INT,
-  created_at DATETIME,
-  updated_at DATETIME
-);
+create table share.`users` (
+  id int(11) auto_increment not null comment 'ID'
+  , login_id varchar(50) comment 'ログインID'
+  , password_hash varchar(255) comment 'パスワード'
+  , name varchar(50) comment '名前'
+  , role_id int(11) comment '権限ID'
+  , created_at datetime comment '作成日'
+  , updated_at datetime comment '更新日'
+  , primary key (id)
+)
+  comment='ユーザ'
+  engine InnoDB
+  row_format DYNAMIC
+  auto_increment 5
+  collate utf8mb4_general_ci

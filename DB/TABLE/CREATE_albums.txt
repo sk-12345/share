@@ -3,31 +3,36 @@ USE share;
 -- 既にあれば削除
 DROP TABLE IF EXISTS albums;
 
-CREATE TABLE albums (
-  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  title VARCHAR(255) NOT NULL,
-  description TEXT NOT NULL,
-  folder_key VARCHAR(255) NOT NULL,
-  created_by INT UNSIGNED NOT NULL,
-  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (id),
-  UNIQUE KEY uq_folder_key (folder_key)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+create table share.`albums` (
+  id int(10) unsigned auto_increment not null comment 'アルバムID'
+  , title varchar(255) not null comment 'タイトル'
+  , description text not null comment '説明'
+  , folder_key varchar(255) not null comment 'アルバム鍵'
+  , created_by int(10) unsigned not null comment '作成者'
+  , created_at datetime default current_timestamp() not null comment '作成時間'
+  , updated_at datetime on update CURRENT_TIMESTAMP default current_timestamp() not null comment '更新時間'
+  , primary key (id)
+)
+  comment='アルバム'
+  engine InnoDB
+  row_format DYNAMIC
+  auto_increment 6
+  collate utf8mb4_general_ci
 
 -- 既にあれば削除
 DROP TABLE IF EXISTS album_photos;
 
-CREATE TABLE album_photos (
-  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  album_id INT UNSIGNED NOT NULL,
-  file_name VARCHAR(255) NOT NULL,
-  original_name VARCHAR(255) NOT NULL,
-  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (id),
-  KEY idx_album (album_id),
-  CONSTRAINT fk_album_photos_album
-    FOREIGN KEY (album_id) REFERENCES albums(id)
-    ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+create table share.`album_photos` (
+  id int(10) unsigned auto_increment not null comment '写真ID'
+  , album_id int(10) unsigned not null comment 'アルバムID'
+  , file_name varchar(255) not null comment 'ファイル名前'
+  , original_name varchar(255) not null comment '写真名前'
+  , created_at datetime default current_timestamp() not null comment '作成時間'
+  , primary key (id)
+)
+  comment='写真'
+  engine InnoDB
+  row_format DYNAMIC
+  auto_increment 7
+  collate utf8mb4_general_ci
 
