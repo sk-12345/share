@@ -17,7 +17,7 @@ if %errorlevel% neq 0 (
 
 REM 設定値
 set LINK_PATH=C:\xampp\htdocs\share\img\albums
-set TARGET_PATH=\\100.108.151.51\hdd\share\img\albums
+set TARGET_PATH=\\100.108.151.51\hdd-e\share\img\albums
 
 echo.
 echo [LINK]   %LINK_PATH%
