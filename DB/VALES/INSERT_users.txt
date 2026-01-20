@@ -1,5 +1,5 @@
 ﻿SET NAMES utf8mb4;
-USE share;
+USE nishijuku;
 
 -- 既存ユーザーを削除（入れ直し用）
 DELETE FROM users;
@@ -21,4 +21,12 @@ VALUES
 
 (4, '一般',
 '$2y$10$47B.L.YaI/OYsh7GzwXzquPqO67g3YoRvk1b6JIIrq1VwNq/m2AXS',
-'一般ユーザー', 4, NOW(), NOW());
+'一般ユーザー', 4, NOW(), NOW()),
+
+(5, '齋藤　航',
+'$2y$10$47B.L.YaI/OYsh7GzwXzquPqO67g3YoRvk1b6JIIrq1VwNq/m2AXS',
+'写真ユーザー', 3, NOW(), NOW()),
+
+(6, '高島　穂香',
+'$2y$10$47B.L.YaI/OYsh7GzwXzquPqO67g3YoRvk1b6JIIrq1VwNq/m2AXS',
+'写真ユーザー', 3, NOW(), NOW());
